@@ -1,0 +1,53 @@
+ON WINDOWS:
+
+$ truffle console
+truffle(development)> Test.at("0x5ba63aa48a67cad599ee027264ec73543ceb5ee8").getBalance()
+{ [String: '0'] s: 1, e: 0, c: [ 0 ] }
+truffle(development)> Test.at("0x5ba63aa48a67cad599ee027264ec73543ceb5ee8").testNonLib({value: web3.toWei(1)})
+{ tx: '0x1446bb7c7b93c63d49afabbc59dc0f68e41eaa2c72a9f9ecfcceec9cff706067',
+  receipt:
+   { transactionHash: '0x1446bb7c7b93c63d49afabbc59dc0f68e41eaa2c72a9f9ecfcceec9cff706067',
+     transactionIndex: 0,
+     blockHash: '0xea6f2506c8d0307f4ed895fe2acb75c8f515fa3bd6da37eec61398983ff2bef5',
+     blockNumber: 39,
+     gasUsed: 23291,
+     cumulativeGasUsed: 23291,
+     contractAddress: null,
+     logs: [ [Object] ] },
+  logs:
+   [ { logIndex: 0,
+       transactionIndex: 0,
+       transactionHash: '0x1446bb7c7b93c63d49afabbc59dc0f68e41eaa2c72a9f9ecfcceec9cff706067',
+       blockHash: '0xea6f2506c8d0307f4ed895fe2acb75c8f515fa3bd6da37eec61398983ff2bef5',
+       blockNumber: 39,
+       address: '0x5ba63aa48a67cad599ee027264ec73543ceb5ee8',
+       type: 'mined',
+       event: 'e_testNonLib',
+       args: [Object] } ] }
+truffle(development)> Test.at("0x5ba63aa48a67cad599ee027264ec73543ceb5ee8").getBalance()
+{ [String: '1000000000000000000'] s: 1, e: 18, c: [ 10000 ] }
+
+
+truffle(development)> Test.at("0x5ba63aa48a67cad599ee027264ec73543ceb5ee8").test({value: web3.toWei(1)})
+{ tx: '0xe4f2be0e141ebfbba992b307c854f795c0c2a91051f8ca9943d30c960ae88044',
+  receipt:
+   { transactionHash: '0xe4f2be0e141ebfbba992b307c854f795c0c2a91051f8ca9943d30c960ae88044',
+     transactionIndex: 0,
+     blockHash: '0x6e208d17f0793d0c8f1f9a0c82895bccf34a7eaf44351270101071f52d3cd464',
+     blockNumber: 40,
+     gasUsed: 23687,
+     cumulativeGasUsed: 23687,
+     contractAddress: null,
+     logs: [ [Object] ] },
+  logs:
+   [ { logIndex: 0,
+       transactionIndex: 0,
+       transactionHash: '0xe4f2be0e141ebfbba992b307c854f795c0c2a91051f8ca9943d30c960ae88044',
+       blockHash: '0x6e208d17f0793d0c8f1f9a0c82895bccf34a7eaf44351270101071f52d3cd464',
+       blockNumber: 40,
+       address: '0x5ba63aa48a67cad599ee027264ec73543ceb5ee8',
+       type: 'mined',
+       event: 'e_testLib',
+       args: [Object] } ] }
+truffle(development)> Test.at("0x5ba63aa48a67cad599ee027264ec73543ceb5ee8").getBalance()
+{ [String: '3000000000000000000'] s: 1, e: 18, c: [ 30000 ] }
